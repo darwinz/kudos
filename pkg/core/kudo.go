@@ -1,6 +1,6 @@
 package core
 
-// Kudo represents a oos kudo.
+// Kudo represents an oos kudo
 type Kudo struct {
 	UserID      string `json:"user_id" bson:"userId"`
 	RepoID      string `json:"id" bson:"repoId"`
