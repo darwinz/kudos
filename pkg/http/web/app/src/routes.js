@@ -8,8 +8,8 @@ import GitHubRepoDetails from './components/GithubRepoDetails';
 
 Vue.use(VueRouter);
 Vue.use(Auth, {
-  issuer: '{{ OKTA_ORG_URL }}/oauth2/default',
-  client_id: '{{ OKTA_APP_CLIENT_ID }}',
+  issuer: `${process.env.VUE_APP_OKTA_ORG_URL}/oauth2/default`,
+  client_id: `${process.env.VUE_APP_OKTA_APP_CLIENT_ID}`,
   redirect_uri: 'http://localhost:8080/implicit/callback',
   scope: 'openid profile email'
 })
