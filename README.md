@@ -5,7 +5,7 @@ kudos
 [![Go Report Card](https://goreportcard.com/badge/github.com/darwinz/kudos)](https://goreportcard.com/report/github.com/darwinz/kudos)
 [![Apache 2 licensed](https://img.shields.io/badge/license-Apache2-blue.svg)](https://raw.githubusercontent.com/darwinz/kudos/master/LICENSE)
 
-Go API and Vue.js SPA frontend. GitHub repo keyword search with a feature allowing users to upvote (give kudos) to found repos
+Go API and Vue.js SPA frontend. GitHub repo keyword search with a feature allowing users to upvote (give kudos) to found repos.  Authenticated through Okta OIDC.
 
 ## Prerequisites
 
@@ -14,6 +14,12 @@ Go API and Vue.js SPA frontend. GitHub repo keyword search with a feature allowi
 - yarn (https://classic.yarnpkg.com/en/docs/getting-started)
 
 ## Installation / Setup
+
+#### Okta setup
+
+Authentication for the app is provided through an integration with Okta.  Add authentication for the app by signing up for a [free developer account](https://developer.okta.com/signup/) and creating an OIDC application in Okta.
+
+Once logged in, create a new application by clicking "Add Application", then select the "Single-Page App" platform option.  The default application settings should work.
 
 #### Environment Variables
 
