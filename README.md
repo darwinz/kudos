@@ -5,7 +5,7 @@ kudos
 [![Go Report Card](https://goreportcard.com/badge/github.com/darwinz/kudos)](https://goreportcard.com/report/github.com/darwinz/kudos)
 [![Apache 2 licensed](https://img.shields.io/badge/license-Apache2-blue.svg)](https://raw.githubusercontent.com/darwinz/kudos/master/LICENSE)
 
-Go API and Vue.js SPA frontend. GitHub repo keyword search with likes (kudos)
+Go API and Vue.js SPA frontend. GitHub repo keyword search with a feature allowing users to upvote (give kudos) to found repos
 
 ## Prerequisites
 
