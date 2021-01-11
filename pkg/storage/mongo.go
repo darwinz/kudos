@@ -6,6 +6,7 @@ import (
 	"github.com/globalsign/mgo/bson"
 	"log"
 	"os"
+	"time"
 )
 
 const (
@@ -95,11 +96,22 @@ func (r MongoRepository) Count() (int, error) {
 
 // NewMongoSession dials mongodb and creates a session.
 func newMongoSession() (*mgo.Session, error) {
-	mongoURL := os.Getenv("MONGO_URL")
-	if mongoURL == "" {
-		log.Fatal("MONGO_URL not provided")
+	mongoHost := os.Getenv("MONGO_HOST")
+	dbName := os.Getenv("MONGO_DB")
+	userName := os.Getenv("MONGO_USER")
+	password := os.Getenv("MONGO_PASS")
+	if mongoHost == "" || userName == "" || password == "" {
+		log.Fatal("Mongo info not provided")
 	}
-	return mgo.Dial(mongoURL)
+
+	mongoDialInfo := &mgo.DialInfo{
+		Addrs: []string{mongoHost},
+		Database: dbName,
+		Username: userName,
+		Password: password,
+		Timeout: 10 * time.Second,
+	}
+	return mgo.DialWithInfo(mongoDialInfo)
 }
 
 func newMongoRepositoryLogger() *log.Logger {
